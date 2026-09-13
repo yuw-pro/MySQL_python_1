@@ -51,7 +51,6 @@ class DoubanHelper:
             parts = lines[1].split('/')
             release_raw = parts[0].strip() 
             self.release =  release_raw.split('(', 1)[0]
-            # self.relase = parts[0].
             if len(parts) > 2:
                 self.country = parts[-2].strip()
                 self.genre = parts[-1].strip()        
@@ -88,5 +87,15 @@ class DoubanHelper:
             self.information = self.fetch_info()
             self.fetch_film_info(self.information)
         return self.film_data
+
+    def run(self, pages=1):
+        print(f"=== 开始抓取豆瓣Top250（前 {pages} 页） ===")
+        data = self.fetch_all(pages)
+        print(f"抓取完成，共获得 {len(data)} 条电影记录。")
+        return data
+
+if __name__ == '__main__':
+    DoubanHelper().run(pages=1)
+
     
         

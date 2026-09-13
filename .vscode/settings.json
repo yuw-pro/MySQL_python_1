@@ -10,7 +10,21 @@
             "server": "localhost",
             "port": 3306,
             "driver": "MySQL",
-            "name": "本地Sql",
+            "name": "本地Sql - douban",
+            "database": "douban",
+            "username": "root"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "本地Sql - students_sql",
             "database": "students_sql",
             "username": "root"
         }
